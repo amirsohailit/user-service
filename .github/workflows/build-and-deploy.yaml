@@ -60,6 +60,4 @@ jobs:
 
       # Step 9: Restart the App Service
       - name: Restart Azure App Service
-        run: az webapp restart \
-          --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-          --name ${{ secrets.AZURE_WEBAPP_NAME }}
+        run: az webapp restart --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --name ${{ secrets.AZURE_WEBAPP_NAME }}
