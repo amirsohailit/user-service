@@ -1,0 +1,26 @@
+meta {
+  name: Insert a User
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/users
+  body: json
+  auth: inherit
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "firstName": "Adam",
+    "lastName": "Smith",
+    "nickname": "ad",
+    "password": "SecurePass3!",
+    "email": "test.smith@test.com",
+    "country": "Italy"
+  }
+}

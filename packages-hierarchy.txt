@@ -1,0 +1,30 @@
+com.mytestorg.user.application.port
+│
+├── input.user      // Interfaces representing input operations (use cases) related to users.
+│
+└── output          // Interfaces representing output operations or services the core depends on (e.g., repositories, messaging, external APIs).
+
+com.mytestorg.user.domain
+│
+└── model           // Domain entities and value objects (core business objects).
+
+
+com.mytest.user.infrastructure
+│
+├── adapter
+│   ├── input
+│   │   └── rest
+│   │       ├── configuration     // REST-specific configuration classes.
+│   │       ├── controller        // REST controllers exposing HTTP endpoints.
+│   │       ├── dto               // Data Transfer Objects for REST communication.
+│   │       ├── mapper            // Converters between domain models and DTOs.
+│   │       └── EndpointCollection // Centralized REST endpoint definitions.
+│   │
+│   └── output                   // Implementations for output ports (e.g., persistence, messaging, external services).
+│
+├── configuration                // Configuration classes for infrastructure components like Kafka, object mappers, and security.
+│
+│
+└── exception                    // Custom exceptions for handling domain and application errors.
+│
+└── validator       // Domain-specific validation logic enforcing business rules.

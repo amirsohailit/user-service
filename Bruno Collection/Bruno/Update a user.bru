@@ -1,0 +1,26 @@
+meta {
+  name: Update a user
+  type: http
+  seq: 1
+}
+
+put {
+  url: http://localhost:8080/users/5ced826f-6e33-492f-9b50-39f0fa359861
+  body: json
+  auth: inherit
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "firstName": "Test",
+    "lastName": "Test",
+    "nickname": "Test",
+    "password": "SecurePass@123",
+    "email": "test.test@example.com",
+    "country": "Netherlands"
+  }
+}

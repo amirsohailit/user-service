@@ -1,0 +1,181 @@
+{
+  "name": "Bruno",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "Delete a User",
+      "filename": "Delete a User.bru",
+      "seq": 3,
+      "request": {
+        "url": "http://localhost:8080/users/ae473a09-554e-446f-8bc2-797b52fa3f8d",
+        "method": "DELETE",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Get a single user by user id",
+      "filename": "Get a single user by user id.bru",
+      "seq": 5,
+      "request": {
+        "url": "http://localhost:8080/users/5ced826f-6e33-492f-9b50-39f0fa359861",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Get Users by Country or without country with pagination",
+      "filename": "Get Users by Country or without country with pagination.bru",
+      "seq": 4,
+      "request": {
+        "url": "http://localhost:8080/users?country=Portugal&page=0&size=10",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "country",
+            "value": "Portugal",
+            "type": "query",
+            "enabled": true
+          },
+          {
+            "name": "page",
+            "value": "0",
+            "type": "query",
+            "enabled": true
+          },
+          {
+            "name": "size",
+            "value": "10",
+            "type": "query",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Insert a User",
+      "filename": "Insert a User.bru",
+      "seq": 2,
+      "request": {
+        "url": "http://localhost:8080/users",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"firstName\": \"Adam\",\n  \"lastName\": \"Smith\",\n  \"nickname\": \"ad\",\n  \"password\": \"SecurePass3!\",\n  \"email\": \"test.smith@test.com\",\n  \"country\": \"Italy\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Update a user",
+      "filename": "Update a user.bru",
+      "seq": 1,
+      "request": {
+        "url": "http://localhost:8080/users/5ced826f-6e33-492f-9b50-39f0fa359861",
+        "method": "PUT",
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"firstName\": \"Test\",\n  \"lastName\": \"Test\",\n  \"nickname\": \"Test\",\n  \"password\": \"SecurePass@123\",\n  \"email\": \"test.test@example.com\",\n  \"country\": \"Netherlands\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "Bruno",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "size": 0.0012226104736328125,
+    "filesCount": 5
+  }
+}

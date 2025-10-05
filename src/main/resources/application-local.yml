@@ -1,0 +1,12 @@
+spring:
+  kafka:
+    topic: test
+    bootstrap-servers: kafka:9092
+  data:
+    mongodb:
+      uri: mongodb://mongodb:27017/test
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, env, mappings

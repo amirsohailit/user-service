@@ -1,0 +1,7 @@
+spring:
+  kafka:
+    topic: test #just a placeholder
+    bootstrap-servers: kafka:9092 #should be replaced with your kafka bootstrap server
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/test #should be replaced with your mongodb uri
