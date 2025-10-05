@@ -5,12 +5,7 @@ It implements full CRUD operations on user registration data and follows modern 
 including reactive streams, containerization, event publishing with Kafka, and API documentation with OpenAPI.
 
 ## Assumptions & Design Decisions
-While my first instinct was to use traditional Spring Boot since I have a lot of experience with it,
-I decided to go with **Spring WebFlux** to take advantage of its non-blocking and reactive model.
-Furthermore, I chose hexagonal architecture (also known as ports and adapters architecture) to ensure a clean separation 
-between the core domain logic and external concerns such as databases, messaging systems, and web frameworks
-Other options could have been Quarkus or Micronut, but I chose Spring due to its maturity, and strong ecosystem. 
----
+While my first instinct was to use traditional Spring Boot since I have a lot of experience with it, I decided to go with Spring WebFlux to take advantage of its non-blocking and reactive model. Furthermore, I chose hexagonal architecture (also known as ports and adapters architecture) to ensure a clean separation between the core domain logic and external concerns such as databases, messaging systems, and web frameworks. Other options could have been Quarkus or Micronaut, but I chose Spring due to its maturity and strong ecosystem.
 
 ##  Features
 
@@ -112,4 +107,5 @@ the following improvements are recommended:
 ### Packages Hierarchy
 
 For a detailed overview of the project’s package structure and architectural organization,  
+
 please refer to [`packages-hierarchy.txt`](./packages-hierarchy.txt).
