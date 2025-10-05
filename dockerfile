@@ -1,14 +1,13 @@
-# Use the JDK 21 base image
-FROM eclipse-temurin:21-jdk
-
-# Set the working directory
+# Stage 1: Build JAR (optional if building locally)
+FROM maven:3.9.4-eclipse-temurin-21 AS build
 WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean package -DskipTests
 
-# Copy and build the JAR
-COPY target/user-service-*.jar app.jar
-
-# Expose port
+# Stage 2: Run app
+FROM eclipse-temurin:21-jdk
+WORKDIR /app
+COPY --from=build /app/target/user-service-*.jar app.jar
 EXPOSE 8080
-
-# Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
