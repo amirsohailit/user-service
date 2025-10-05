@@ -31,3 +31,19 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Logs
+*log/
+
+# OS-specific
+.DS_Store
+
+# Maven wrapper scripts (optional)
+mvnw
+mvnw.cmd
+.mvn/wrapper/
+
+# Other
+*.class
+*.jar
+*.war
