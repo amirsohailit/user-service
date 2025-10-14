@@ -1,13 +1,29 @@
-# Stage 1: Build JAR (optional if building locally)
+# =========================
+# Stage 1: Build the JAR
+# =========================
 FROM maven:3.9.4-eclipse-temurin-21 AS build
-WORKDIR /app
-COPY pom.xml .
-COPY src ./src
-RUN mvn clean package -DskipTests
 
-# Stage 2: Run app
-FROM eclipse-temurin:21-jdk
 WORKDIR /app
-COPY --from=build /app/target/user-service-*.jar app.jar
+
+# Copy pom.xml and pre-download dependencies to leverage Docker cache
+COPY pom.xml .
+RUN mvn dependency:go-offline -B
+
+# Copy source code
+COPY src ./src
+
+# Build the application (skip tests to speed up container builds)
+RUN mvn clean package -DskipTests -DfinalName=app
+
+# ============================================
+# Stage 2: Run with Distroless
+# ============================================
+FROM gcr.io/distroless/java21-debian12
+WORKDIR /app
+
+# Copy the fat JAR from the build stage
+COPY --from=build /app/target/*.jar app.jar
+
 EXPOSE 8080
+
 ENTRYPOINT ["java", "-jar", "app.jar"]
